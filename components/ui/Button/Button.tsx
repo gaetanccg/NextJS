@@ -9,10 +9,10 @@ type ButtonProps = {
 };
 
 const variantClasses: Record<string, string> = {
-  primary: "bg-project-black text-project-white hover:opacity-90",
-  secondary: "bg-project-green text-project-white hover:opacity-90",
+  primary: "bg-black text-white hover:opacity-90",
+  secondary: "bg-green-500 text-white hover:opacity-90",
   outline:
-    "bg-transparent text-project-black border border-project-black hover:bg-project-black hover:text-project-white",
+    "bg-transparent text-black border border-black hover:bg-black hover:text-white",
 };
 
 export default function Button({

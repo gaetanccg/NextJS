@@ -1,8 +1,16 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactStrictMode: true,
+    output: "export",
+    basePath: process.env.PAGES_BASE_PATH || "",
+    trailingSlash: true,
+    images: {
+        unoptimized: true,
+    },
+    pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 
-export default nextConfig;
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);
