@@ -1,0 +1,153 @@
+/* Hero header */
+.heroHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+.heroDate {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.heroTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.heroDots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Hero image */
+.heroImage {
+  padding: 0 1.5rem 3rem;
+}
+
+.heroImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.heroImg {
+  object-fit: cover;
+}
+
+/* Sites web section */
+.sitesSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 0.25rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.sectionSub {
+  font-size: 0.8125rem;
+  color: #999;
+  margin-bottom: 2.5rem;
+}
+
+.sitesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .sitesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.siteCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.siteImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.siteImg {
+  object-fit: cover;
+}
+
+.siteCardTitle {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.viewAll {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: underline;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+/* Highlight section */
+.highlightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem 4rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.videoWrapper {
+  width: 100%;
+  max-width: 640px;
+  margin-top: 2rem;
+}
+
+.video {
+  width: 100%;
+  border-radius: 0.75rem;
+}

@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-project-black:  #000000;
+  --color-project-green:  #64C364;
+  --color-project-pink:   #FFC0CB;
+  --color-project-purple: #C15BC1;
+  --color-project-beige:  #F5F5DC;
+  --color-project-white:  #FFFFFF;
+  --color-project-brown:  #C65858;
+  --color-project-gold:   #F4DF6E;
+  --color-project-blue:   #6EBFED;
+  --color-project-orange: #F3B25D;
+  --color-project-yellow: #F4F485;
 }
 
 html,

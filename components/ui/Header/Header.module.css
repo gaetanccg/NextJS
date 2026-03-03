@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  font-size: 0.875rem;
+  color: #666;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authLink {
+  font-size: 0.875rem;
+  color: #666;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.authButton {
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

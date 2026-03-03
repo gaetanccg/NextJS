@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
