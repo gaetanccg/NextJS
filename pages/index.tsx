@@ -112,7 +112,7 @@ export default function HomePage({
 
         <div className={styles.videoWrapper}>
           <video
-            src="/highlight.mp4"
+            src={`${process.env.PAGES_BASE_PATH || ""}/highlight.mp4`}
             autoPlay
             muted
             loop

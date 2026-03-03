@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
     images: {
         unoptimized: true,
     },
+    env: {
+        PAGES_BASE_PATH: process.env.PAGES_BASE_PATH || "",
+    },
     pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 
