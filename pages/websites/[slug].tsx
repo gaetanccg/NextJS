@@ -98,7 +98,7 @@ export default function WebsitePage({
                 <div className={styles.showcaseInner}>
                     <div className={styles.thumbnailWrapper}>
                         <Image
-                            src={`/websites/${website.thumbnail}`}
+                            src={`${process.env.PAGES_BASE_PATH || ""}/websites/${website.thumbnail}`}
                             alt={website.title}
                             fill
                             sizes="(max-width: 768px) 100vw, 60vw"
@@ -125,7 +125,7 @@ export default function WebsitePage({
                     {website.images.map((img) => (
                         <div key={img} className={styles.galleryItem}>
                             <Image
-                                src={`/websites/${img}`}
+                                src={`${process.env.PAGES_BASE_PATH || ""}/websites/${img}`}
                                 alt={`${website.title} - ${img}`}
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"

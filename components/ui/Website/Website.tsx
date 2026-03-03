@@ -13,7 +13,7 @@ export default function Website({ title, thumbnail, slug }: WebsiteProps) {
     <Link href={`/websites/${slug}`} className={styles.card}>
       <div className={styles.imageWrapper}>
         <Image
-          src={`/websites/${thumbnail}`}
+          src={`${process.env.PAGES_BASE_PATH || ""}/websites/${thumbnail}`}
           alt={title}
           fill
           sizes="(max-width: 768px) 100vw, 25vw"

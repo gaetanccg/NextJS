@@ -60,7 +60,7 @@ export default function HomePage({
         <Link href={`/websites/${featured.slug}`}>
           <div className={styles.heroImageWrapper}>
             <Image
-              src={`/websites/${featured.thumbnail}`}
+              src={`${process.env.PAGES_BASE_PATH || ""}/websites/${featured.thumbnail}`}
               alt={featured.title}
               fill
               priority
@@ -88,7 +88,7 @@ export default function HomePage({
             >
               <div className={styles.siteImageWrapper}>
                 <Image
-                  src={`/websites/${w.thumbnail}`}
+                  src={`${process.env.PAGES_BASE_PATH || ""}/websites/${w.thumbnail}`}
                   alt={w.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"

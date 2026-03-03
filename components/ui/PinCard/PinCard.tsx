@@ -14,7 +14,7 @@ export default function PinCard({ title, image, href }: PinCardProps) {
     <Wrapper href={href} className={styles.card}>
       <div className={styles.imageWrapper}>
         <Image
-          src={image}
+          src={`${process.env.PAGES_BASE_PATH || ""}${image}`}
           alt={title}
           fill
           sizes="(max-width: 768px) 50vw, 25vw"
