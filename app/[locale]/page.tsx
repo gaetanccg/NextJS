@@ -26,7 +26,7 @@ export default async function HomePage() {
 
   return (
     <main>
-      <WebsiteHeader website={websites[0]} />
+      {websites[0] && <WebsiteHeader website={websites[0]} />}
 
       <div className="bg-white px-6 py-12">
         <Title tag="h2" topLine={t("topLine")} bottomLine={t("bottomLine")}>
