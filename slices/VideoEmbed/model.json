@@ -1,0 +1,34 @@
+{
+  "id": "video_embed",
+  "type": "SharedSlice",
+  "name": "VideoEmbed",
+  "description": "Intégration vidéo YouTube",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "Titre de la section vidéo",
+            "single": "heading2"
+          }
+        },
+        "video_id": {
+          "type": "Text",
+          "config": {
+            "label": "ID YouTube",
+            "placeholder": "Ex: dQw4w9WgXcQ"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

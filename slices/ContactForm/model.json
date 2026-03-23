@@ -1,0 +1,35 @@
+{
+  "id": "contact_form",
+  "type": "SharedSlice",
+  "name": "ContactForm",
+  "description": "Formulaire de contact",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "Contactez-nous",
+            "single": "heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Une question ? N'hésitez pas.",
+            "single": "paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

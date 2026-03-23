@@ -1,0 +1,27 @@
+{
+  "id": "rich_text",
+  "type": "SharedSlice",
+  "name": "RichText",
+  "description": "Bloc de texte riche",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Contenu",
+            "placeholder": "Écrivez votre contenu ici...",
+            "multi": "paragraph,heading2,heading3,strong,em,hyperlink,list-item,o-list-item"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

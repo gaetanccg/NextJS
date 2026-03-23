@@ -1,33 +1,46 @@
 import Link from "next/link";
 import Logo from "../ui/Logo";
+import { createClient } from "@/prismicio";
+import { PrismicNextLink } from "@prismicio/next";
+import TagSearch from "./TagSearch";
 
-export default function Header() {
+export default async function Header() {
+  const client = createClient();
+
+  let headerLinks: Array<{ label: string; link: any }> = [];
+  try {
+    const navigation = await client.getSingle("navigation");
+    headerLinks = navigation.data.header_links || [];
+  } catch {
+    // Fallback si pas de navigation dans Prismic
+  }
+
   return (
     <header className="flex items-center gap-5 py-8 px-6">
       <Logo />
 
       <nav className="flex-1">
         <ul className="flex items-center justify-end gap-5">
-          <li>
-            <Link href="/websites">Sites web</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
+          {headerLinks.length > 0 ? (
+            headerLinks.map((item, i) => (
+              <li key={`header-link-${i}`}>
+                <PrismicNextLink field={item.link}>
+                  {item.label}
+                </PrismicNextLink>
+              </li>
+            ))
+          ) : (
+            <>
+              <li>
+                <Link href="/websites">Sites web</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
+            </>
+          )}
           <li className="hidden md:block flex-1">
-            <form
-              role="search"
-              className="w-full flex gap-2 items-center bg-soft rounded-md p-2"
-            >
-              <button type="submit" className="flex">
-                <span className="material-symbols-outlined">search</span>
-              </button>
-              <input
-                type="search"
-                placeholder="Rechercher par tags"
-                className="flex-1"
-              />
-            </form>
+            <TagSearch />
           </li>
           <li>
             <Link href="/pins" className="flex items-center">

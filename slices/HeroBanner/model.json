@@ -1,0 +1,57 @@
+{
+  "id": "hero_banner",
+  "type": "SharedSlice",
+  "name": "HeroBanner",
+  "description": "Bannière principale avec titre, description et image",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titre",
+            "placeholder": "Titre du hero",
+            "single": "heading1"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Description du hero",
+            "single": "paragraph"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Texte du bouton",
+            "placeholder": "En savoir plus"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Lien du bouton",
+            "allowTargetBlank": true
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "image_block",
+  "type": "SharedSlice",
+  "name": "ImageBlock",
+  "description": "Bloc image avec légende",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "caption": {
+          "type": "Text",
+          "config": {
+            "label": "Légende",
+            "placeholder": "Légende de l'image"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

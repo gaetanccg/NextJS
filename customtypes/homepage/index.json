@@ -1,0 +1,44 @@
+{
+  "id": "homepage",
+  "label": "Page d'accueil",
+  "format": "page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Titre",
+          "single": "heading1",
+          "placeholder": "Titre de la page d'accueil"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "Description pour le SEO"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero_banner": { "type": "SharedSlice" },
+            "rich_text": { "type": "SharedSlice" },
+            "video_embed": { "type": "SharedSlice" },
+            "image_block": { "type": "SharedSlice" }
+          }
+        }
+      }
+    }
+  }
+}
