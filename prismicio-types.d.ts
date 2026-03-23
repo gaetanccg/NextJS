@@ -261,34 +261,45 @@ export type MentionsDocument<Lang extends string = string> =
   >;
 
 /**
- * Content for Menu documents
+ * Content for menu documents
  */
-interface MenuDocumentData {
+interface Menu1DocumentData {
   /**
-   * Liens field in *Menu*
+   * links field in *menu*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.links
+   * - **API ID Path**: menu1.links
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
   links: prismic.Repeatable<
     prismic.LinkField<string, string, unknown, prismic.FieldState, never>
   >;
+
+  /**
+   * Text field in *menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu1.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  text: prismic.KeyTextField;
 }
 
 /**
- * Menu document from Prismic
+ * menu document from Prismic
  *
- * - **API ID**: `menu`
+ * - **API ID**: `menu1`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/content-modeling
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type MenuDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
+export type Menu1Document<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<Menu1DocumentData>, "menu1", Lang>;
 
 type WebsiteDocumentDataSlicesSlice =
   | ImagesSliceSlice
@@ -466,7 +477,7 @@ export type AllDocumentTypes =
   | ContactDocument
   | HomeDocument
   | MentionsDocument
-  | MenuDocument
+  | Menu1Document
   | WebsiteDocument
   | WebsitesDocument;
 
@@ -662,8 +673,8 @@ declare module "@prismicio/client" {
       MentionsDocument,
       MentionsDocumentData,
       MentionsDocumentDataSlicesSlice,
-      MenuDocument,
-      MenuDocumentData,
+      Menu1Document,
+      Menu1DocumentData,
       WebsiteDocument,
       WebsiteDocumentData,
       WebsiteDocumentDataSlicesSlice,

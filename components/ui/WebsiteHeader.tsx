@@ -10,20 +10,24 @@ export default function WebsiteHeader({
 }: {
   website: WebsiteDocument;
 }) {
+  if (!website) return null;
+
   return (
     <>
       <div className="px-6 py-12">
         <header className="text-center pb-12 flex flex-col gap-4">
-          <time dateTime={website.first_publication_date}>
-            {new Date(website.first_publication_date).toLocaleDateString(
-              "fr-FR",
-              {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              },
-            )}
-          </time>
+          {website.first_publication_date && (
+            <time dateTime={website.first_publication_date}>
+              {new Date(website.first_publication_date).toLocaleDateString(
+                "fr-FR",
+                {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                },
+              )}
+            </time>
+          )}
           <Title tag="h1">{website.data.title}</Title>
           <div className="flex justify-center gap-4">
             <span className="material-symbols-outlined cursor-pointer">

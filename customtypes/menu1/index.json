@@ -1,7 +1,7 @@
 {
   "format": "custom",
-  "id": "menu",
-  "label": "Menu",
+  "id": "menu1",
+  "label": "menu",
   "repeatable": false,
   "status": true,
   "json": {
@@ -9,12 +9,19 @@
       "links": {
         "type": "Link",
         "config": {
-          "label": "Liens",
+          "label": "links",
           "placeholder": "",
           "select": null,
-          "allowTargetBlank": false,
+          "allowTargetBlank": true,
           "allowText": true,
           "repeat": true
+        }
+      },
+      "text": {
+        "type": "Text",
+        "config": {
+          "label": "Text",
+          "placeholder": ""
         }
       }
     }
