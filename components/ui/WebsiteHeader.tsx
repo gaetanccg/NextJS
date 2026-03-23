@@ -7,6 +7,7 @@ import Title from "./Title";
 import { PrismicImage } from "@prismicio/react";
 import Link from "next/link";
 import { useWebsitesStore } from "@/store/websites.store";
+import { useLocale } from "next-intl";
 
 export default function WebsiteHeader({
   website,
@@ -16,6 +17,7 @@ export default function WebsiteHeader({
   const websites = useWebsitesStore((state) => state.websites);
   const addWebsite = useWebsitesStore((state) => state.addWebsite);
   const removeWebsite = useWebsitesStore((state) => state.removeWebsite);
+  const currentLocale = useLocale();
 
   return (
     <>
@@ -23,7 +25,7 @@ export default function WebsiteHeader({
         <header className="text-center pb-12 flex flex-col gap-4">
           <time dateTime={website.first_publication_date}>
             {new Date(website.first_publication_date).toLocaleDateString(
-              "fr-FR",
+              currentLocale,
               {
                 year: "numeric",
                 month: "short",

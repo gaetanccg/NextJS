@@ -4,6 +4,7 @@ import Video from "@/components/ui/Video";
 import Website from "@/components/ui/Website";
 import WebsiteHeader from "@/components/ui/WebsiteHeader";
 import { createClient } from "@/prismicio";
+import { getTranslations } from "next-intl/server";
 
 export const metadata = {
   title: "Titre de la page",
@@ -11,6 +12,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
+  const t = await getTranslations("HomePage");
   const client = createClient();
   const websites = await client.getAllByType("website", {
     limit: 4,
@@ -18,18 +20,17 @@ export default async function HomePage() {
       { field: "document.first_publication_date", direction: "desc" },
     ],
   });
+  const homePage = await client.getSingle("home");
+
+  console.log("homePage: ", homePage);
 
   return (
     <main>
       <WebsiteHeader website={websites[0]} />
 
       <div className="bg-white px-6 py-12">
-        <Title
-          tag="h2"
-          topLine="Voir les derniers"
-          bottomLine="et ajoute tes propres reviews"
-        >
-          Sites web
+        <Title tag="h2" topLine={t("topLine")} bottomLine={t("bottomLine")}>
+          {t("topLine")}
         </Title>
         <div className="grid md:grid-cols-3 gap-4 pt-12">
           {websites

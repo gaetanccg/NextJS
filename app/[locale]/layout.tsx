@@ -1,9 +1,10 @@
-import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Inter } from "next/font/google";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
+import { NextIntlClientProvider } from "next-intl";
 
 const inter = Inter({
   weight: ["400", "700"],
@@ -25,10 +26,12 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
-        <PrismicPreview repositoryName={repositoryName} />
+        <NextIntlClientProvider>
+          <Header />
+          {children}
+          <Footer />
+          <PrismicPreview repositoryName={repositoryName} />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

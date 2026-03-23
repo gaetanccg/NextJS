@@ -38,6 +38,8 @@ export default async function WebsitePage({ params }: WebsitePageType) {
   const client = createClient();
   const website = await client.getByUID("website", slug);
 
+  console.log("website:", website);
+
   return (
     <main>
       <WebsiteHeader website={website} />

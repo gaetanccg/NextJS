@@ -1,16 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/libs/i18n/navigation";
 import Link from "next/link";
 import Logo from "../ui/Logo";
 import { useWebsitesStore } from "@/store/websites.store";
+import { useLocale } from "next-intl";
+import clsx from "clsx";
 
 export default function Header() {
   const websites = useWebsitesStore((state) => state.websites);
   const router = useRouter();
   const pathname = usePathname();
   const [tag, setTag] = useState("");
+  const currentLocale = useLocale();
+
+  const switchToLocale = (newLocale: "fr" | "en") => {
+    router.replace(pathname, { locale: newLocale });
+  };
 
   useEffect(() => {
     setTag("");
@@ -61,8 +68,24 @@ export default function Header() {
           </li>
           <li>
             <ul className="flex gap-1 border rounded p-1 text-tiny">
-              <li className="pr-1 border-r">EN</li>
-              <li className="font-bold">FR</li>
+              <li
+                className={clsx(
+                  currentLocale == "en" && "font-bold",
+                  "pr-1 border-r cursor-pointer",
+                )}
+                onClick={() => switchToLocale("en")}
+              >
+                EN
+              </li>
+              <li
+                className={clsx(
+                  currentLocale == "fr" && "font-bold",
+                  "cursor-pointer",
+                )}
+                onClick={() => switchToLocale("fr")}
+              >
+                FR
+              </li>
             </ul>
           </li>
         </ul>
