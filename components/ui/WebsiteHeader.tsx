@@ -4,6 +4,7 @@ import SiteMenu from "../layout/SiteMenu";
 import Title from "./Title";
 import { PrismicImage } from "@prismicio/react";
 import Link from "next/link";
+import PinButton from "./PinButton";
 
 export default function WebsiteHeader({
   website,
@@ -30,9 +31,7 @@ export default function WebsiteHeader({
           )}
           <Title tag="h1">{website.data.title}</Title>
           <div className="flex justify-center gap-4">
-            <span className="material-symbols-outlined cursor-pointer">
-              keep
-            </span>
+            <PinButton uid={website.uid} />
             {isFilled.link(website.data.weblink) && (
               <a href={asLink(website.data.weblink)!} target="_blank">
                 <span className="material-symbols-outlined">open_in_new</span>

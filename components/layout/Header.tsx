@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Logo from "../ui/Logo";
+import PinCount from "../ui/PinCount";
 
 export default function Header() {
   const router = useRouter();
@@ -53,7 +54,7 @@ export default function Header() {
           </li>
           <li>
             <Link href="/pins" className="flex items-center">
-              13
+              <PinCount />
               <span className="material-symbols-outlined">keep</span>
             </Link>
           </li>
