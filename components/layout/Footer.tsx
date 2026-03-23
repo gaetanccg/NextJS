@@ -6,7 +6,12 @@ import { isFilled } from "@prismicio/client";
 
 export default async function Footer() {
   const client = createClient();
-  const menu = await client.getSingle("menu");
+  let menu: any = null;
+  try {
+    menu = await client.getSingle("menu");
+  } catch {
+    // Document "menu" pas encore créé dans Prismic
+  }
 
   return (
     <footer className="px-6 py-12">
