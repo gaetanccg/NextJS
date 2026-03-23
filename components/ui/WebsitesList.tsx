@@ -4,6 +4,7 @@ import { useState } from "react";
 import Website from "@/components/ui/Website";
 import { Button } from "@/components/ui/Button";
 import { WebsiteDocument } from "@/prismicio-types";
+import { useTranslations } from "next-intl";
 
 const PAGE_SIZE = 8;
 
@@ -11,6 +12,7 @@ type WebsitesListType = { websites: WebsiteDocument[] };
 
 export default function WebsitesList({ websites }: WebsitesListType) {
   const [visible, setVisible] = useState(PAGE_SIZE);
+  const t = useTranslations("websites");
 
   return (
     <>
@@ -22,7 +24,7 @@ export default function WebsitesList({ websites }: WebsitesListType) {
       {visible < websites.length && (
         <footer className="pt-12 flex justify-center">
           <Button onClick={() => setVisible((v) => v + PAGE_SIZE)}>
-            Charger plus de sites web
+            {t("loadMore")}
           </Button>
         </footer>
       )}

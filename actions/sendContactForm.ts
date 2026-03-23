@@ -1,6 +1,7 @@
 "use server";
-import { redirect } from "next/navigation";
+import { redirect } from "@/i18n/navigation";
 import validator from "validator";
+import { getLocale } from "next-intl/server";
 
 export async function sendContactForm(formData: FormData) {
   const email = validator.normalizeEmail(formData.get("email")!.toString());
@@ -8,5 +9,6 @@ export async function sendContactForm(formData: FormData) {
 
   /* Envoi de l'email avec nodemailer */
 
-  redirect("/thankyou");
+  const locale = await getLocale();
+  redirect({ href: "/thankyou", locale });
 }

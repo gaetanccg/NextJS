@@ -1,0 +1,44 @@
+{
+  "header": {
+    "websites": "Websites",
+    "contact": "Contact",
+    "searchPlaceholder": "Search by tags"
+  },
+  "home": {
+    "topLine": "See the latest",
+    "bottomLine": "and add your own reviews",
+    "title": "Websites",
+    "viewAll": "View all websites",
+    "highlightTop": "discover our latest",
+    "highlightTitle": "Highlight"
+  },
+  "websites": {
+    "topLine": "Discover new",
+    "title": "Websites",
+    "loadMore": "Load more websites"
+  },
+  "search": {
+    "topLine": "Your search for",
+    "bottomLine": "{count} website(s)",
+    "noResults": "Oops, no results for now...",
+    "viewAll": "View all websites"
+  },
+  "pins": {
+    "topLine": "Your list of",
+    "bottomLine": "{count} website(s)",
+    "title": "Pins"
+  },
+  "siteMenu": {
+    "viewSites": "View websites",
+    "viewSite": "View website"
+  },
+  "contact": {
+    "submit": "Send"
+  },
+  "thankyou": {
+    "message": "Thank you for your message"
+  },
+  "notFound": {
+    "message": "Page not found"
+  }
+}

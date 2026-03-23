@@ -16,6 +16,7 @@ export async function generateStaticParams() {
 
 type WebsitePageType = {
   params: Promise<{
+    locale: string;
     slug: string;
   }>;
 };

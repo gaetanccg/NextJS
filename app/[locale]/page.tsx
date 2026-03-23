@@ -4,6 +4,7 @@ import Video from "@/components/ui/Video";
 import Website from "@/components/ui/Website";
 import WebsiteHeader from "@/components/ui/WebsiteHeader";
 import { createClient } from "@/prismicio";
+import { getTranslations } from "next-intl/server";
 
 export const metadata = {
   title: "Titre de la page",
@@ -11,6 +12,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
+  const t = await getTranslations("home");
   const client = createClient();
   const websites = await client.getAllByType("website", {
     limit: 4,
@@ -26,10 +28,10 @@ export default async function HomePage() {
       <div className="bg-white px-6 py-12">
         <Title
           tag="h2"
-          topLine="Voir les derniers"
-          bottomLine="et ajoute tes propres reviews"
+          topLine={t("topLine")}
+          bottomLine={t("bottomLine")}
         >
-          Sites web
+          {t("title")}
         </Title>
         <div className="grid md:grid-cols-3 gap-4 pt-12">
           {websites
@@ -40,14 +42,14 @@ export default async function HomePage() {
         </div>
         <footer className="pt-12 flex justify-center">
           <ButtonLink href="/websites" variant="link">
-            Voir tous les sites
+            {t("viewAll")}
           </ButtonLink>
         </footer>
       </div>
 
       <div className="bg-white px-6 py-12">
-        <Title tag="h2" topLine="découvrez notre dernier">
-          Highlight
+        <Title tag="h2" topLine={t("highlightTop")}>
+          {t("highlightTitle")}
         </Title>
 
         <Video id="414785329" />

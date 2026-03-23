@@ -1,0 +1,44 @@
+{
+  "header": {
+    "websites": "Sites web",
+    "contact": "Contact",
+    "searchPlaceholder": "Rechercher par tags"
+  },
+  "home": {
+    "topLine": "Voir les derniers",
+    "bottomLine": "et ajoute tes propres reviews",
+    "title": "Sites web",
+    "viewAll": "Voir tous les sites",
+    "highlightTop": "découvrez notre dernier",
+    "highlightTitle": "Highlight"
+  },
+  "websites": {
+    "topLine": "Découvrez de nouveaux",
+    "title": "Sites web",
+    "loadMore": "Charger plus de sites web"
+  },
+  "search": {
+    "topLine": "Votre recherche pour",
+    "bottomLine": "{count} site(s) web",
+    "noResults": "Oups, aucun résultat pour le moment ...",
+    "viewAll": "Voir tous les sites"
+  },
+  "pins": {
+    "topLine": "Liste de vos",
+    "bottomLine": "{count} site(s) web",
+    "title": "Pins"
+  },
+  "siteMenu": {
+    "viewSites": "Voir les sites",
+    "viewSite": "Voir le site"
+  },
+  "contact": {
+    "submit": "Envoyer"
+  },
+  "thankyou": {
+    "message": "Merci pour votre message"
+  },
+  "notFound": {
+    "message": "Page non trouvée"
+  }
+}

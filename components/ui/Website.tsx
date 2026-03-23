@@ -1,6 +1,6 @@
 import { WebsiteDocument } from "@/prismicio-types";
 import { PrismicImage } from "@prismicio/react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export default function Website({ website }: { website: WebsiteDocument }) {
   return (

@@ -1,14 +1,15 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Logo from "../ui/Logo";
 import CookiesConsent from "./CookiesConsent";
 import { createClient } from "@/prismicio";
 import { isFilled } from "@prismicio/client";
+import { Menu1Document } from "@/prismicio-types";
 
 export default async function Footer() {
   const client = createClient();
-  let menu: any = null;
+  let menu: Menu1Document | null = null;
   try {
-    menu = await client.getSingle("menu");
+    menu = await client.getSingle("menu1");
   } catch {
     // Document "menu" pas encore créé dans Prismic
   }

@@ -5,8 +5,9 @@ import { asLink, isFilled } from "@prismicio/client";
 import SiteMenu from "../layout/SiteMenu";
 import Title from "./Title";
 import { PrismicImage } from "@prismicio/react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useWebsitesStore } from "@/store/websites.store";
+import { useLocale } from "next-intl";
 
 export default function WebsiteHeader({
   website,
@@ -16,6 +17,8 @@ export default function WebsiteHeader({
   const websites = useWebsitesStore((state) => state.websites);
   const addWebsite = useWebsitesStore((state) => state.addWebsite);
   const removeWebsite = useWebsitesStore((state) => state.removeWebsite);
+  const locale = useLocale();
+  const dateLocale = locale === "fr" ? "fr-FR" : "en-US";
 
   return (
     <>
@@ -23,7 +26,7 @@ export default function WebsiteHeader({
         <header className="text-center pb-12 flex flex-col gap-4">
           <time dateTime={website.first_publication_date}>
             {new Date(website.first_publication_date).toLocaleDateString(
-              "fr-FR",
+              dateLocale,
               {
                 year: "numeric",
                 month: "short",

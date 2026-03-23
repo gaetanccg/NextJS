@@ -1,15 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import Link from "next/link";
+import { usePathname, useRouter, Link } from "@/i18n/navigation";
 import Logo from "../ui/Logo";
 import { useWebsitesStore } from "@/store/websites.store";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function Header() {
   const websites = useWebsitesStore((state) => state.websites);
   const router = useRouter();
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations("header");
   const [tag, setTag] = useState("");
 
   useEffect(() => {
@@ -23,6 +25,10 @@ export default function Header() {
     }
   }
 
+  function switchLocale(newLocale: "fr" | "en") {
+    router.replace(pathname, { locale: newLocale });
+  }
+
   return (
     <header className="flex items-center gap-5 py-8 px-6">
       <Logo />
@@ -30,10 +36,10 @@ export default function Header() {
       <nav className="flex-1">
         <ul className="flex items-center justify-end gap-5">
           <li>
-            <Link href="/websites">Sites web</Link>
+            <Link href="/websites">{t("websites")}</Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">{t("contact")}</Link>
           </li>
           <li className="hidden md:block flex-1">
             <form
@@ -48,7 +54,7 @@ export default function Header() {
                 type="search"
                 value={tag}
                 onChange={(e) => setTag(e.target.value)}
-                placeholder="Rechercher par tags"
+                placeholder={t("searchPlaceholder")}
                 className="flex-1"
               />
             </form>
@@ -61,8 +67,18 @@ export default function Header() {
           </li>
           <li>
             <ul className="flex gap-1 border rounded p-1 text-tiny">
-              <li className="pr-1 border-r">EN</li>
-              <li className="font-bold">FR</li>
+              <li
+                className={`pr-1 border-r cursor-pointer ${locale === "en" ? "font-bold" : ""}`}
+                onClick={() => switchLocale("en")}
+              >
+                EN
+              </li>
+              <li
+                className={`cursor-pointer ${locale === "fr" ? "font-bold" : ""}`}
+                onClick={() => switchLocale("fr")}
+              >
+                FR
+              </li>
             </ul>
           </li>
         </ul>

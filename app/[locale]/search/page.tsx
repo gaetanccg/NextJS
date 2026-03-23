@@ -4,6 +4,7 @@ import { createClient } from "@/prismicio";
 import * as prismic from "@prismicio/client";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { redirect } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 
 export default async function SearchPage({
   searchParams,
@@ -11,6 +12,7 @@ export default async function SearchPage({
   searchParams: Promise<{ tag?: string }>;
 }) {
   const { tag } = await searchParams;
+  const t = await getTranslations("search");
 
   if (!tag) {
     redirect("/");
@@ -25,8 +27,8 @@ export default async function SearchPage({
     <main className="px-6 py-12">
       <Title
         tag="h1"
-        topLine="Votre recherche pour"
-        bottomLine={`${websites.length} site(s) web`}
+        topLine={t("topLine")}
+        bottomLine={t("bottomLine", { count: websites.length })}
       >
         {tag}
       </Title>
@@ -40,10 +42,10 @@ export default async function SearchPage({
       ) : (
         <div className="flex flex-col gap-8 items-center justify-center">
           <p className="text-2xl mt-8 text-center">
-            Oups, aucun résultat pour le moment ...
+            {t("noResults")}
           </p>
           <ButtonLink href="/websites" variant="filled" color="dark">
-            Voir tous les sites
+            {t("viewAll")}
           </ButtonLink>
         </div>
       )}
