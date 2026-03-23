@@ -1,7 +1,7 @@
 {
   "id": "navigation",
   "label": "Navigation",
-  "format": "custom",
+  "format": "page",
   "repeatable": false,
   "status": true,
   "json": {
@@ -51,6 +51,10 @@
             }
           }
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone"
       }
     }
   }
